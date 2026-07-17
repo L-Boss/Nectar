@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # google_test_app
 
 A new Flutter project.
@@ -14,3 +15,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# Nectar
+>>>>>>> 8e765d456689930db718add64b8921a2213ef648
