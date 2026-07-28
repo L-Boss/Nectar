@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_test_app/data/app_strings/app_asset_paths.dart';
 import 'package:google_test_app/presentation/components/buttons/buttons.dart';
+import 'package:google_test_app/presentation/screens/signin/enterNumber.dart';
 import 'package:google_test_app/presentation/utilities/margin/margin.dart';
 import 'package:google_test_app/presentation/utilities/screensizes/screensizes.dart';
 import 'package:google_test_app/presentation/utilities/styles/color/color.dart';
@@ -38,7 +40,12 @@ class Signin extends StatelessWidget {
                     textAlign: TextAlign.left,
                   ),
                   Ymargin(y: 30),
-                  InkWell(onTap: () {}, child: NumberInputField()),
+                  InkWell(
+                    onTap: () {
+                      Get.to(() => const EnterNumber());
+                    },
+                    child: NumberInputField(isEnabled: false),
+                  ),
                   Ymargin(y: 40),
                   Align(
                     alignment: Alignment.center,

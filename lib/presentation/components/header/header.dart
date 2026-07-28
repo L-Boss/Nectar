@@ -1,26 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
-import 'package:google_test_app/presentation/utilities/styles/color/color.dart';
 
-class AppHeader extends StatelessWidget {
-  const AppHeader({super.key});
+class AppHeader extends StatelessWidget implements PreferredSizeWidget {
+  final Widget? leadingIcon;
+  final Widget? title;
+  final Widget? lastIcon;
+  final double height;
+
+  const AppHeader({
+    super.key,
+    this.leadingIcon,
+    this.title,
+    this.lastIcon,
+    this.height = kToolbarHeight,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.sp),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Icon(
-            Icons.arrow_back_ios,
-            color: AppColor.black,
-            weight: 16.sp,
-            size: 18.sp,
-          ),
-          Spacer(),
-        ],
-      ),
+    return AppBar(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      scrolledUnderElevation: 0,
+
+      automaticallyImplyLeading: false,
+
+      leading: leadingIcon,
+
+      titleSpacing: 0,
+      centerTitle: true,
+
+      title: title != null ? Center(child: title) : null,
+
+      actions: lastIcon != null
+          ? [
+              Padding(
+                padding: const EdgeInsets.only(right: 16.0),
+
+                child: Center(child: lastIcon!),
+              ),
+            ]
+          : null,
     );
   }
+
+  @override
+  Size get preferredSize => Size.fromHeight(height);
 }

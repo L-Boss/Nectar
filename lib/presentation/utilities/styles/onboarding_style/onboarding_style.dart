@@ -13,5 +13,5 @@ final TextStyle onBoardingDescriptionStyle = TextStyle(
   fontFamily: "Gilroy",
   fontSize: 16.sp,
   fontWeight: FontWeight.w400,
-  color: AppColor.grey,
+  color: AppColor.grey.withValues(alpha: 0.7),
 );

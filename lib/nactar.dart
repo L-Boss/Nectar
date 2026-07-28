@@ -28,7 +28,7 @@ class _NectarState extends State<Nectar> {
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
         theme: ThemeData.light(),
-        darkTheme: ThemeData.dark(),
+        // darkTheme: ThemeData.dark(),
         home: child,
       ),
 

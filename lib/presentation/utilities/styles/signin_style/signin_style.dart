@@ -12,6 +12,6 @@ final TextStyle signInStyle = TextStyle(
 final TextStyle signInDescriptionStyle = TextStyle(
   fontFamily: "Gilroy",
   fontSize: 16.sp,
-  fontWeight: FontWeight.w400,
+  fontWeight: FontWeight.w600,
   color: Color(0xFF828282),
 );

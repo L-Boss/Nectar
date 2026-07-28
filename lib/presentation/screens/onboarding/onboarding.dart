@@ -43,7 +43,7 @@ class Onboarding extends StatelessWidget {
                       textAlign: TextAlign.center,
                       softWrap: true,
                     ),
-                    Ymargin(y: 19),
+                    Ymargin(y: 12),
                     Text(
                       "Get your groceries in as fast as one hour",
                       style: onBoardingDescriptionStyle,
