@@ -48,7 +48,6 @@ class AppNavigationBar extends StatelessWidget {
       () => NavigationBarTheme(
         data: NavigationBarThemeData(
           indicatorColor: Colors.transparent,
-
           labelTextStyle: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.selected)) {
               return TextStyle(
@@ -64,35 +63,42 @@ class AppNavigationBar extends StatelessWidget {
             );
           }),
         ),
-        child: NavigationBar(
-          height: 92.h,
-          selectedIndex: navCtrl.currentIndex.value,
-          onDestinationSelected: (index) {
-            navCtrl.changeIndex(index);
-          },
-          backgroundColor: Colors.white,
-          destinations: [
-            NavigationDestination(
-              icon: buildNavIcon(AppAssetPaths.shop, 0),
-              label: 'Shop',
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15.r),
+              topRight: Radius.circular(15.r),
             ),
-            NavigationDestination(
-              icon: buildNavIcon(AppAssetPaths.explore, 1),
-              label: 'Explore',
-            ),
-            NavigationDestination(
-              icon: buildNavIcon(AppAssetPaths.cart, 2),
-              label: 'Cart',
-            ),
-            NavigationDestination(
-              icon: buildNavIcon(AppAssetPaths.favourite, 3),
-              label: 'Favourites',
-            ),
-            NavigationDestination(
-              icon: buildNavIcon(AppAssetPaths.account, 4),
-              label: 'Account',
-            ),
-          ],
+          ),
+          child: NavigationBar(
+            selectedIndex: navCtrl.currentIndex.value,
+            onDestinationSelected: (index) {
+              navCtrl.changeIndex(index);
+            },
+            backgroundColor: Colors.white,
+            destinations: [
+              NavigationDestination(
+                icon: buildNavIcon(AppAssetPaths.shop, 0),
+                label: 'Shop',
+              ),
+              NavigationDestination(
+                icon: buildNavIcon(AppAssetPaths.explore, 1),
+                label: 'Explore',
+              ),
+              NavigationDestination(
+                icon: buildNavIcon(AppAssetPaths.cart, 2),
+                label: 'Cart',
+              ),
+              NavigationDestination(
+                icon: buildNavIcon(AppAssetPaths.favourite, 3),
+                label: 'Favourites',
+              ),
+              NavigationDestination(
+                icon: buildNavIcon(AppAssetPaths.account, 4),
+                label: 'Account',
+              ),
+            ],
+          ),
         ),
       ),
     );

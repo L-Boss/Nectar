@@ -13,6 +13,7 @@ class AppFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final Widget? sufficIcon;
   final Color? suffixIconColor;
+  final ValueChanged<String>? onChanaged;
   const AppFormField({
     super.key,
     required this.label,
@@ -21,6 +22,7 @@ class AppFormField extends StatelessWidget {
     this.obscureText,
     this.keyboardType,
     this.sufficIcon,
+    this.onChanaged,
     this.suffixIconColor,
   });
 
@@ -39,6 +41,7 @@ class AppFormField extends StatelessWidget {
         ),
         Ymargin(y: 10),
         TextFormField(
+          onChanged: onChanaged,
           cursorColor: AppColor.black,
           decoration: InputDecoration(
             enabled: true,

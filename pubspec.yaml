@@ -25,6 +25,7 @@ dependencies:
   intl_phone_number_input:
   carousel_slider_plus: 
   count_stepper: ^0.0.5
+  supabase_flutter: ^2.17.1
 
 dev_dependencies:
   flutter_test:

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 import 'package:get/get.dart';
 import 'package:google_test_app/data/app_strings/app_asset_paths.dart';
+import 'package:google_test_app/data/controllers/auth_controller.dart';
 import 'package:google_test_app/presentation/components/buttons/buttons.dart';
-import 'package:google_test_app/presentation/components/navigation/navigation.dart';
-import 'package:google_test_app/presentation/screens/home/home.dart';
 import 'package:google_test_app/presentation/screens/signup/signup.dart';
 import 'package:google_test_app/presentation/utilities/margin/margin.dart';
 import 'package:google_test_app/presentation/utilities/screensizes/screensizes.dart';
@@ -14,7 +13,8 @@ import 'package:google_test_app/presentation/utilities/styles/signin_style/signi
 import 'package:google_test_app/presentation/widgets/formfields/formfields.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  final controller = Get.put(AuthController());
+  Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,17 +59,18 @@ class Login extends StatelessWidget {
                   ),
 
                   Ymargin(y: 40),
-                  AppFormField(label: "Email", hintText: "Enter your email"),
+                  AppFormField(
+                    label: "Email",
+                    hintText: "Enter your email",
+                    onChanaged: (value) => controller.email.value = value,
+                  ),
                   Ymargin(y: 30),
                   AppFormField(
                     label: "Password",
                     hintText: "Enter your password",
+                    onChanaged: (value) => controller.password.value = value,
                     obscuringCharacter: '*',
                     obscureText: true,
-                    sufficIcon: InkWell(
-                      onTap: () {},
-                      child: Icon(Icons.remove_red_eye),
-                    ),
                   ),
                   Ymargin(y: 20),
                   Align(
@@ -88,15 +89,21 @@ class Login extends StatelessWidget {
 
                   Align(
                     alignment: AlignmentGeometry.center,
-                    child: Buttons(
-                      onPressed: () {
-                        Get.off(() => AppPageNavigation());
-                      },
-                      label: "Log In",
-                      labelColor: AppColor.buttonLabelColor,
-                      buttonWidth: screenSizes.screenWidth(context) * 0.85,
-                      buttonColor: AppColor.splashBackgroundColor,
-                    ),
+                    child: Obx(() {
+                      final control = controller.isLoading.value;
+                      return control
+                          ? CircularProgressIndicator()
+                          : Buttons(
+                              onPressed: () async {
+                                await controller.login();
+                              },
+                              label: "Log In",
+                              labelColor: AppColor.buttonLabelColor,
+                              buttonWidth:
+                                  screenSizes.screenWidth(context) * 0.85,
+                              buttonColor: AppColor.splashBackgroundColor,
+                            );
+                    }),
                   ),
 
                   Ymargin(y: 25),

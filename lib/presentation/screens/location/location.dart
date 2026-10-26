@@ -81,7 +81,7 @@ class Location extends StatelessWidget {
                   Ymargin(y: 40),
                   Buttons(
                     onPressed: () {
-                      Get.to(() => const Login());
+                      Get.offAll(() => Login());
                     },
                     label: "Submit",
                     labelColor: AppColor.buttonLabelColor,

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 import 'package:get/get.dart';
 import 'package:google_test_app/data/app_strings/app_asset_paths.dart';
 import 'package:google_test_app/presentation/components/buttons/buttons.dart';
-import 'package:google_test_app/presentation/screens/signin/signin.dart';
+import 'package:google_test_app/presentation/screens/login/login.dart';
 import 'package:google_test_app/presentation/utilities/margin/margin.dart';
 import 'package:google_test_app/presentation/utilities/screensizes/screensizes.dart';
 import 'package:google_test_app/presentation/utilities/styles/color/color.dart';
@@ -55,7 +55,7 @@ class Onboarding extends StatelessWidget {
                 Ymargin(y: 40),
                 Buttons(
                   onPressed: () {
-                    Get.to(() => const Signin());
+                    Get.to(() => Login());
                   },
                   label: "Get Started",
                   labelColor: AppColor.buttonLabelColor,

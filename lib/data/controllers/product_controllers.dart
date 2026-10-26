@@ -69,6 +69,42 @@ class ProductController extends GetxController {
       ),
       ProductModel(
         image: AppAssetPaths.fruit1,
+        name: 'Running Shoes',
+        description: 'Comfortable sports shoes',
+        price: '49.99',
+      ),
+      ProductModel(
+        image: AppAssetPaths.beverage1,
+        name: 'Running Shoes',
+        description: 'Comfortable sports shoes',
+        price: '49.99',
+      ),
+      ProductModel(
+        image: AppAssetPaths.fruit1,
+        name: 'Running Shoes',
+        description: 'Comfortable sports shoes',
+        price: '49.99',
+      ),
+      ProductModel(
+        image: AppAssetPaths.beverage2,
+        name: 'Running Shoes',
+        description: 'Comfortable sports shoes',
+        price: '49.99',
+      ),
+      ProductModel(
+        image: AppAssetPaths.beverage3,
+        name: 'Running Shoes',
+        description: 'Comfortable sports shoes',
+        price: '49.99',
+      ),
+      ProductModel(
+        image: AppAssetPaths.beverage4,
+        name: 'Running Shoes',
+        description: 'Comfortable sports shoes',
+        price: '49.99',
+      ),
+      ProductModel(
+        image: AppAssetPaths.product1,
         name: 'Smart Watch',
         description: 'Waterproof with heart monitor',
         price: '129.99',
@@ -80,13 +116,26 @@ class ProductController extends GetxController {
         price: '129.99',
       ),
       ProductModel(
-        image: AppAssetPaths.fruit1,
+        image: AppAssetPaths.product1,
         name: 'Smart Watch',
         description: 'Waterproof with heart monitor',
         price: '129.99',
       ),
       ProductModel(
         image: AppAssetPaths.fruit1,
+        name: 'Smart Watch',
+        description: 'Waterproof with heart monitor',
+        price: '129.99',
+      ),
+
+      ProductModel(
+        image: AppAssetPaths.product1,
+        name: 'Smart Watch',
+        description: 'Waterproof with heart monitor',
+        price: '129.99',
+      ),
+      ProductModel(
+        image: AppAssetPaths.product1,
         name: 'Smart Watch',
         description: 'Waterproof with heart monitor',
         price: '129.99',

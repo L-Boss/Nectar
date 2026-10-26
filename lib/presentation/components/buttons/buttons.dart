@@ -9,6 +9,7 @@ class Buttons extends StatelessWidget {
   final Color labelColor;
   final double buttonWidth;
   final Widget? leadingIcon;
+  final Widget? actions;
 
   const Buttons({
     super.key,
@@ -18,6 +19,7 @@ class Buttons extends StatelessWidget {
     required this.buttonWidth,
     this.buttonColor,
     this.leadingIcon,
+    this.actions,
   });
 
   @override
@@ -36,10 +38,21 @@ class Buttons extends StatelessWidget {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             leadingIcon != null ? leadingIcon! : const SizedBox.shrink(),
             SizedBox(width: leadingIcon != null ? 10.w : 0),
-            Text(label, style: buttonStyle.copyWith(color: labelColor)),
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                label,
+                style: buttonStyle.copyWith(color: labelColor),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsGeometry.only(left: 15.w),
+              child: actions != null ? actions! : const SizedBox.shrink(),
+            ),
           ],
         ),
       ),
